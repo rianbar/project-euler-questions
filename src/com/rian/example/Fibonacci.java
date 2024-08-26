@@ -1,5 +1,6 @@
 package com.rian.example;
 
+//sum of the fibonacci even-valued terms
 public class Fibonacci {
     public static void main(String[] args) {
         final int LIMIT = 4_000_000;
@@ -16,6 +17,6 @@ public class Fibonacci {
             if(cur % 2 == 0) sum += cur;
         }
 
-        System.out.println(sum);
+        System.out.println("a soma dos valores pares da sequencia de fibonacci até 4 milhões é " + sum);
     }
 }

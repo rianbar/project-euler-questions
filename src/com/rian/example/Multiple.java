@@ -2,6 +2,7 @@ package com.rian.example;
 
 import java.util.function.Predicate;
 
+//Find the sum of all the multiples of three or five bellow 1000
 public class Multiple {
 
     public static void main(String[] args) {
@@ -14,6 +15,6 @@ public class Multiple {
             if(isMultipleOfThreeOrFive.test(i)) result += i;
         }
 
-        System.out.println(result);
+        System.out.println("a soma de todos os multiplos de 3 ou 5 até o valor 1000 é " + result);
     }
 }

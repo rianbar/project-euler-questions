@@ -1,18 +1,18 @@
 package com.rian.example;
 
-import java.math.BigInteger;
-
 public class LargestPrimeFactor {
     public static void main(String[] args) {
-        final int n = new BigInteger("600851475143").intValue();
+        long number = 600851475143L;
+        long i = 2;
 
-        int primeFactor = 2;
-        int largestFactor = 0;
-
-        while(n > 0) {
-            if((n / primeFactor) % 2 == 0)
+        while (i * i <= number) {
+            if (number % i == 0) {
+                number /= i;
+            } else {
+                i++;
+            }
         }
 
-
+        System.out.println(number);
     }
 }
