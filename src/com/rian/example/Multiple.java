@@ -1,20 +1,17 @@
 package com.rian.example;
 
-import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
-//Find the sum of all the multiples of three or five bellow 1000
 public class Multiple {
 
     public static void main(String[] args) {
         final int LIMIT = 1000;
-        int result = 0;
 
-        Predicate<Integer> isMultipleOfThreeOrFive = n -> n % 3 == 0 || n % 5 == 0;
+        int stream = IntStream.iterate(0, n -> n + 1)
+                .limit(LIMIT)
+                .filter(n -> n % 3 == 0 || n % 5 == 0)
+                .sum();
 
-        for (int i = 0; i < LIMIT; i++) {
-            if(isMultipleOfThreeOrFive.test(i)) result += i;
-        }
-
-        System.out.println("a soma de todos os multiplos de 3 ou 5 até o valor 1000 é " + result);
+        System.out.println("the sum of all multiples of 3 or 5 is:  " + stream);
     }
 }
