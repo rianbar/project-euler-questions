@@ -10,4 +10,6 @@ public class Exercise10 {
                 .asLongStream()
                 .sum();
 
+        System.out.println(result);
+    }
 }
