@@ -2,6 +2,8 @@ package com.rian.example;
 
 import java.util.stream.LongStream;
 
+import com.rian.lib.MathUtils;
+
 public class Exercise12Optimized {
     public static void main(String[] args) {
         long result = LongStream.iterate(1, n -> n + 1)

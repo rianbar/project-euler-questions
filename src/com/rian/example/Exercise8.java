@@ -2,6 +2,8 @@ package com.rian.example;
 
 import java.util.stream.IntStream;
 
+import com.rian.lib.MathUtils;
+
 public class Exercise8 {
 
     public static final String SEQUENCE =

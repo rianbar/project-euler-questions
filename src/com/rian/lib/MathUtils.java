@@ -1,4 +1,4 @@
-package com.rian.example;
+package com.rian.lib;
 
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
