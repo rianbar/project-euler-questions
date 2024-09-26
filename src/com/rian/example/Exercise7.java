@@ -14,14 +14,9 @@ public class Exercise7 {
 
     public static List<Integer> primeListGenerate(int value) {
         return IntStream.iterate(1, n -> n + 1)
-                .filter(Exercise7::isPrime)
+                .filter(MathUtils::isPrime)
                 .limit(value)
                 .boxed()
                 .collect(Collectors.toList());
-    }
-
-    public static boolean isPrime(int number) {
-        return number > 1 && IntStream.range(2, number)
-                .noneMatch(n -> number % n == 0);
     }
 }

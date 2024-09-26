@@ -1,7 +1,6 @@
 package com.rian.example;
 
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 public class Exercise8 {
 
@@ -30,19 +29,9 @@ public class Exercise8 {
     public static void main(String[] args) {
         long result = IntStream.rangeClosed(1, SEQUENCE.length() - 13)
                 .mapToObj(n -> SEQUENCE.substring(n, n + 13))
-                .mapToLong(Exercise8::getMultiplyProduct)
+                .mapToLong(MathUtils::getMultiplyProduct)
                 .max().orElse(0);
 
         System.out.println(result);
-    }
-
-    private static long getMultiplyProduct(String subs) {
-        return LongStream.range(0, subs.length())
-                .map(n -> parseToInt(subs.charAt((int) n)))
-                .reduce(1, (a, b) -> a * b);
-    }
-
-    public static int parseToInt(char c) {
-        return Integer.parseInt(String.valueOf(c));
     }
 }
