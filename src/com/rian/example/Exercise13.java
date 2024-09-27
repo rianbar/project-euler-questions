@@ -1,9 +1,6 @@
 package com.rian.example;
-
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.stream.LongStream;
 
 public class Exercise13 {
 
