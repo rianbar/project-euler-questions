@@ -2,6 +2,8 @@ package com.rian.lib;
 
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class MathUtils {
     
@@ -36,5 +38,13 @@ public class MathUtils {
 
     private static int parseToInt(char c) {
         return Integer.parseInt(String.valueOf(c));
+    }
+
+    public static List<Integer> primeListGenerate(int end) {
+        return IntStream.iterate(1, n -> n + 1)
+                .filter(MathUtils::isPrime)
+                .limit(end)
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
