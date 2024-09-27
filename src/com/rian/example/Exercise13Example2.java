@@ -2,7 +2,6 @@ package com.rian.example;
 
 import java.math.BigInteger;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 
 public class Exercise13Example2 {
     private static final String bigNum = 
