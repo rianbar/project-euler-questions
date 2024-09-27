@@ -107,9 +107,9 @@ public class Exercise13Example2 {
     "53503534226472524250874054075591789781264330331690";
 
     public static void main(String[] args) {
-        BigInteger result = IntStream.iterate(0, n -> n + 50)
+        BigInteger result = IntStream.iterate(0, i -> i + 50)
             .limit(bigNum.length() / 50)
-            .mapToObj(n -> bigNum.substring(n, n + 50))
+            .mapToObj(i -> bigNum.substring(i, i + 50))
             .map(BigInteger::new)
             .reduce(BigInteger.ZERO, BigInteger::add);
 
