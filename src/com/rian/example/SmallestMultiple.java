@@ -1,19 +1,18 @@
 package com.rian.example;
 
+import java.util.stream.IntStream;
+
 public class SmallestMultiple {
     public static void main(String[] args) {
 
-        int n1 = 1;
-        int n2 = 1;
+        int smallest = IntStream.iterate(2, j -> j + 1)
+            .filter(SmallestMultiple::isMultiple)
+            .findFirst().orElse(0);
 
-        while(n1 < 20) {
-            if (n2 % n1 == 0) {
-                n1 += 1;
-            } else {
-                n1 = 1;
-                n2 += 1;
-            }
-        }
-        System.out.println(n2);
+        System.out.println(smallest);
+    }
+
+    public static boolean isMultiple(int n) {
+        return IntStream.rangeClosed(1, 20).allMatch(j -> n % j == 0);
     }
 }
