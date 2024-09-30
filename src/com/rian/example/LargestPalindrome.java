@@ -1,20 +1,17 @@
 package com.rian.example;
 
+import java.util.stream.IntStream;
+
 import com.rian.lib.MathUtils;
 
 public class LargestPalindrome {
     public static void main(String[] args) {
-        int largest = 0;
+        int largestPalidrome = IntStream.rangeClosed(100, 999)
+            .flatMap(i -> IntStream.range(i, 999)
+                .map(j -> j * i)
+                .filter(j -> MathUtils.isPalindrome(j)))
+                .max().orElse(0);
 
-        for (int i = 100; i <= 999; i++) {
-            for (int j = i; j <= 999; j++) {
-                int result = i * j;
-                if (MathUtils.isPalindrome(result) && result > largest) {
-                    largest = result;
-                }
-            }
-        }
-
-        System.out.println(largest);
+        System.out.println(largestPalidrome);
     }
 }
